@@ -13,4 +13,7 @@ class BooksPack(object):
 
 
 	def calculate(self):
-		return 0
+		try:
+			return self._books[0] * 8
+		except IndexError:
+			return 0
