@@ -14,6 +14,9 @@ class BooksPack(object):
 
 	def calculate(self):
 		try:
-			return self._books[0] * 8
+			if len(self._books) == 1:
+				return self._books[0] * 8
+			else:
+				return (self._books[0] + self._books[1]) * 8 * 0.95
 		except IndexError:
 			return 0

@@ -16,3 +16,6 @@ class BooksPackTest(unittest.TestCase):
 			books = BooksPack([i])
 		self.assertTrue(books.calculate() == 8*i)
 	
+	def test_two_dif_books(self):
+		books = BooksPack([1, 1])
+		self.assertTrue(books.calculate() == (8*2)*0.95)
