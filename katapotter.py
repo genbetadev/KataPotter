@@ -13,10 +13,18 @@ class BooksPack(object):
 
 
 	def calculate(self):
-		try:
-			if len(self._books) == 1:
-				return self._books[0] * 8
-			else:
-				return (self._books[0] + self._books[1]) * 8 * 0.95
-		except IndexError:
-			return 0
+		price = 0
+		discounts = [0, 1, 0.95, 0.90, 0.80, 0.75]
+		packs = []
+
+		for books_number in self._books:			
+			for i in range(0, books_number):				
+				if len(packs) <= i:
+					packs.append(0)
+
+				packs[i] +=1;
+		
+		for pack in packs:			
+			price += (8 * pack) * discounts[pack]
+
+		return price
