@@ -14,3 +14,7 @@ class BooksPackTest(unittest.TestCase):
 	def test_one_book(self):
 		books = BooksPack([1])
 		self.assertTrue(books.calculate() == 8)
+
+	def test_two_books(self):
+		books = BooksPack([2])
+		self.assertTrue(books.calculate() == 8*2)
