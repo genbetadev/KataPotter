@@ -11,10 +11,8 @@ class BooksPackTest(unittest.TestCase):
 		books = BooksPack([])
 		self.assertTrue(books.calculate() == 0)
 
-	def test_one_book(self):
-		books = BooksPack([1])
-		self.assertTrue(books.calculate() == 8)
-
-	def test_two_books(self):
-		books = BooksPack([2])
-		self.assertTrue(books.calculate() == 8*2)
+	def test_one_to_five_book(self):
+		for i in range(1, 6):
+			books = BooksPack([i])
+		self.assertTrue(books.calculate() == 8*i)
+	
